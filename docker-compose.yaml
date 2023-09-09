@@ -1,0 +1,15 @@
+version: "1"
+services:
+  external:
+    container_name: blog-bun-sveltekit
+    # The name of the image that will be created when building this container
+    image: anasmohammed361/svelte-bun-blog
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Points to a file with the sensitive environment variables
+    # env_file:
+    #   - .env
+    restart: unless-stopped
+    ports:
+      - 8080:3000
